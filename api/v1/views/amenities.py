@@ -34,7 +34,7 @@ def delete_amenity(amenity_id):
     amenity_dict = [obj.to_dict() for obj in amenities if obj.id == amenity_id]
     if amenity_dict == []:
         abort(404)
-    amenity_dict.remove(state_dict[0])
+    amenity_dict.remove(amenity_dict[0])
     for obj in amenities:
         if obj.id == amenity_id:
             storage.delete(obj)
