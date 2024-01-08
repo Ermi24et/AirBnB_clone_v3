@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-a new view for State objects that handles all default RESTFul API actions
+a new view for State objects that handles all default RESTFul API action
 """
 from api.v1.views import app_views
 from flask import jsonify, abort, request
