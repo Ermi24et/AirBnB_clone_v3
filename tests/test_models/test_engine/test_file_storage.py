@@ -114,6 +114,15 @@ class TestFileStorage(unittest.TestCase):
             js = f.read()
         self.assertEqual(json.loads(string), json.loads(js))
     
+    def test_get(self):
+        """ test whether get method retrieves an object or not """
+        state = State(name="Seatle")
+        storage.new(state)
+        val = "State.{}".format(state.id)
+        res = storage.get("State", state.id)
+        self.assertTrue(res.id, state.id)
+        self.assertIsInstance(res, State)
+
     def test_count(self):
         """
         test whether count method returns expected number of objects or not
