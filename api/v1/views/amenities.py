@@ -24,7 +24,7 @@ def get_amenity(amenity_id):
                       if obj.id == amenity_id]
     if amenities_dict == []:
         abort(404)
-    return jsonify(amenity_dict[0])
+    return jsonify(amenities_dict[0])
 
 
 @app_views.route('/amenities/<amenity_id>', methods=['DELETE'])
