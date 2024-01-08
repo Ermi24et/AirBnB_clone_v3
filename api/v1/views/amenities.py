@@ -22,7 +22,7 @@ def get_amenity(amenity_id):
     amenities = storage.all("Amenity").values()
     amenities_dict = [obj.to_dict() for obj in amenities
                       if obj.id == amenity_id]
-    if amenity_dict == []:
+    if amenities_dict == []:
         abort(404)
     return jsonify(amenity_dict[0])
 
