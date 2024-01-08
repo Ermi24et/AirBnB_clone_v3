@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ a script to start an api """
-from flask import Flask
+from flask import Flask, make_response, jsonify
 from api.v1.views import app_views
 from os import getenv
 
@@ -16,6 +16,10 @@ def teardown(error):
     storage.close()
 
 
+@app.errorhandler(404)
+def not_found(err):
+    """ handler for 404 errors that returns a json-format """
+    return make_response(jsonify({'error': 'Not found'}), 404)
 if __name__ == "__main__":
     if getenv("HBNB_API_HOST") is None:
         HBNB_API_HOST = '0.0.0.0'
