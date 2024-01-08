@@ -27,7 +27,7 @@ def get_amenity(amenity_id):
     return jsonify(amenity_dict[0])
 
 
-@app_views.route('/amenities/<amenities_id>', methods=['DELETE'])
+@app_views.route('/amenities/<amenity_id>', methods=['DELETE'])
 def delete_amenity(amenity_id):
     """ deletes a state object """
     amenities = storage.all("Amenity").values()
