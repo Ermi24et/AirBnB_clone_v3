@@ -8,7 +8,7 @@ from models import storage
 from models.user import User
 
 
-@app_views.route('/users/', methods=['GET'])
+@app_views.route('/users', methods=['GET'])
 def state_list():
     """ retrieves the list of all user objects """
     users_list = [obj.to_dict() for obj in storage.all("User").values()]
