@@ -54,7 +54,7 @@ def create_place(city_id):
     if 'name' not in request.get_json():
         abort(400, 'Missing name')
     if 'user_id' not in request.get_json():
-        abort(400, 'Missing name')
+        abort(400, 'Missing user_id')
     cities = storage.all("City").values()
     city_dict = [obj.to_dict() for obj in cities
                  if obj.id == city_id]
