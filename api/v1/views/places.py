@@ -85,19 +85,19 @@ def update_place(place_id):
         abort(400, 'Not a JSON')
     if 'name' in request.get_json():
         place_dict[0]['name'] = request.json['name']
-    if 'description' in request.json():
+    if 'description' in request.get_json():
         place_dict[0]['description'] = request.json['description']
-    if 'number_rooms' in request.json():
+    if 'number_rooms' in request.get_json():
         place_dict[0]['number_rooms'] = request.json['number_rooms']
-    if 'number_bathrooms' in request.json():
+    if 'number_bathrooms' in request.get_json():
         place_dict[0]['number_bathrooms'] = request.json['number_bathrooms']
-    if 'max_guest' in request.json():
+    if 'max_guest' in request.get_json():
         place_dict[0]['max_guest'] = request.json['max_guest']
-    if 'price_by_night' in request.json():
+    if 'price_by_night' in request.get_json():
         place_dict[0]['price_by_night'] = request.json['price_by_night']
-    if 'latitude' in request.json():
+    if 'latitude' in request.get_json():
         place_dict[0]['latitude'] = request.json['latitude']
-    if 'longitude' in request.json():
+    if 'longitude' in request.get_json():
         place_dict[0]['longitude'] = request.json['longitude']
     for obj in places:
         if obj.id == place_id:
