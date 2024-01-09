@@ -10,7 +10,7 @@ app.register_blueprint(app_views)
 
 
 @app.teardown_appcontext
-def teardown(error):
+def teardown(self):
     """ closes an engine """
     from models import storage
     storage.close()
