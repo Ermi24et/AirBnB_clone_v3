@@ -10,7 +10,7 @@ from models.review import Review
 
 
 @app_views.route('/places/<place_id>/reviews', methods=['GET'])
-def reviews_list():
+def reviews_list(place_id):
     """ retrieves the list of all Review objects """
     places = storage.all("Place").values()
     place_dict = [obj.to_dict() for obj in places if obj.id == place_id]
